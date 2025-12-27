@@ -1,6 +1,7 @@
+---
 name: Update Repository Topics
 
-on:
+"on":
   push:
     branches:
       - main
@@ -14,7 +15,7 @@ jobs:
     permissions:
       contents: read
       repository-projects: write
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -25,9 +26,9 @@ jobs:
         run: |
           # Read topics from topics.json
           TOPICS=$(jq -r '.names | join(" --add-topic ")' .github/topics.json)
-          
+
           # Update repository topics using gh CLI
           echo "Updating repository topics..."
           gh repo edit ${{ github.repository }} --add-topic $TOPICS
-          
+
           echo "Topics updated successfully!"
