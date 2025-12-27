@@ -68,13 +68,15 @@ Perfect for researchers, legal professionals, enterprise knowledge bases, custom
 
 ## 🚀 Quick Start
 
+> **⚠️ Note**: This project is currently in active development. The installation and usage instructions below represent the planned interface. Stay tuned for the initial release!
+
 ### Prerequisites
 
 - Python 3.9 or higher
 - pip package manager
 - (Optional) CUDA-compatible GPU for faster processing
 
-### Installation
+### Installation (Coming Soon)
 
 1. **Clone the repository**
    ```bash
@@ -101,12 +103,20 @@ Perfect for researchers, legal professionals, enterprise knowledge bases, custom
 
 5. **Run the application**
    ```bash
-   python main.py
+   python -m intelligent_doc_rag
+   # or use the CLI
+   python -m intelligent_doc_rag --help
    ```
+
+### Watch This Space! 👀
+
+⭐ **Star this repository** to get notified when the first release is available!
 
 ---
 
 ## 📖 Usage
+
+> **📋 Preview**: The following examples demonstrate the planned API design.
 
 ### Basic Document Query
 
