@@ -1,0 +1,33 @@
+name: Update Repository Topics
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/topics.json'
+  workflow_dispatch:
+
+jobs:
+  update-topics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      repository-projects: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Update repository topics
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Read topics from topics.json
+          TOPICS=$(jq -r '.names | join(" --add-topic ")' .github/topics.json)
+          
+          # Update repository topics using gh CLI
+          echo "Updating repository topics..."
+          gh repo edit ${{ github.repository }} --add-topic $TOPICS
+          
+          echo "Topics updated successfully!"
