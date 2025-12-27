@@ -1,6 +1,6 @@
-# Contributing to Intelligent Doc RAG
+# Contributing to RAGflow
 
-First off, thank you for considering contributing to Intelligent Doc RAG! 🎉 It's people like you that make this project such a great tool for the community.
+First off, thank you for considering contributing to RAGflow! 🎉 It's people like you that make this project such a great tool for the community.
 
 ## Table of Contents
 
@@ -95,11 +95,11 @@ Documentation improvements are always appreciated:
 
 ```bash
 # Fork the repository on GitHub, then clone your fork
-git clone https://github.com/YOUR-USERNAME/intelligent-doc-rag.git
-cd intelligent-doc-rag
+git clone https://github.com/YOUR-USERNAME/RAGflow.git
+cd RAGflow
 
 # Add upstream remote
-git remote add upstream https://github.com/anshuman-nanda/intelligent-doc-rag.git
+git remote add upstream https://github.com/anshuman-nanda/RAGflow.git
 ```
 
 ### 2. Create Development Environment
@@ -138,7 +138,7 @@ Write your code, add tests, and update documentation as needed.
 pytest
 
 # Run tests with coverage
-pytest --cov=src tests/
+pytest --cov=ragflow tests/
 
 # Run specific test file
 pytest tests/test_document_processor.py
@@ -148,13 +148,13 @@ pytest tests/test_document_processor.py
 
 ```bash
 # Format code with Black
-black src/ tests/
+black ragflow/ tests/
 
 # Check with flake8
-flake8 src/ tests/
+flake8 ragflow/ tests/
 
 # Type checking with mypy
-mypy src/
+mypy ragflow/
 ```
 
 ## Coding Guidelines
@@ -338,4 +338,4 @@ If you have questions about contributing, feel free to:
 
 ---
 
-**Thank you for contributing to Intelligent Doc RAG!** Every contribution, no matter how small, makes a difference. 🌟
+**Thank you for contributing to RAGflow!** Every contribution, no matter how small, makes a difference. 🌟

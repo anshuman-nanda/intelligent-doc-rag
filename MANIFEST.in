@@ -1,0 +1,26 @@
+# Include documentation
+include README.md
+include LICENSE
+include CONTRIBUTING.md
+include requirements.txt
+include requirements-dev.txt
+
+# Include configuration files
+include .env.example
+include pyproject.toml
+
+# Include package data
+recursive-include ragflow *.py
+recursive-include ragflow *.json
+recursive-include ragflow *.yaml
+recursive-include ragflow *.yml
+
+# Exclude unnecessary files
+exclude .gitignore
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
+recursive-exclude * .DS_Store
+recursive-exclude tests *
+recursive-exclude examples *
+recursive-exclude docs *
+recursive-exclude .github *
