@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      repository-projects: write
+      metadata: write
 
     steps:
       - name: Checkout repository
@@ -24,11 +24,16 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          # Read topics from topics.json
-          TOPICS=$(jq -r '.names | join(" --add-topic ")' .github/topics.json)
-
-          # Update repository topics using gh CLI
+          # Read topics from topics.json and apply each one
           echo "Updating repository topics..."
-          gh repo edit ${{ github.repository }} --add-topic $TOPICS
+
+          # Build the command with all topics
+          CMD="gh repo edit ${{ github.repository }}"
+          for topic in $(jq -r '.names[]' .github/topics.json); do
+            CMD="$CMD --add-topic $topic"
+          done
+
+          # Execute the command
+          eval "$CMD"
 
           echo "Topics updated successfully!"
