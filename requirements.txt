@@ -1,4 +1,4 @@
-# Core dependencies for Intelligent Doc RAG
+# Core dependencies for RAGflow
 
 # Document Processing
 PyPDF2>=3.0.0

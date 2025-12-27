@@ -1,13 +1,13 @@
 <div align="center">
 
-# 🚀 Intelligent Doc RAG
+# 🚀 RAGflow
 
 ### 📚 Transform Your Documents into AI-Powered Knowledge
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python Version](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/downloads/)
-[![GitHub stars](https://img.shields.io/github/stars/anshuman-nanda/intelligent-doc-rag?style=social)](https://github.com/anshuman-nanda/intelligent-doc-rag/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/anshuman-nanda/intelligent-doc-rag?style=social)](https://github.com/anshuman-nanda/intelligent-doc-rag/network/members)
+[![GitHub stars](https://img.shields.io/github/stars/anshuman-nanda/RAGflow?style=social)](https://github.com/anshuman-nanda/RAGflow/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/anshuman-nanda/RAGflow?style=social)](https://github.com/anshuman-nanda/RAGflow/network/members)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
 *An intelligent Retrieval-Augmented Generation (RAG) system that enables semantic search and AI-powered question answering over your documents* ✨
@@ -20,7 +20,7 @@
 
 ## 🌟 Overview
 
-**Intelligent Doc RAG** is a cutting-edge document intelligence platform that combines the power of modern AI with traditional information retrieval. Built on Retrieval-Augmented Generation (RAG) technology, it allows you to:
+**RAGflow** is a cutting-edge document intelligence platform that combines the power of modern AI with traditional information retrieval. Built on Retrieval-Augmented Generation (RAG) technology, it allows you to:
 
 - 🔍 **Semantic Search**: Find relevant information across thousands of documents using natural language queries
 - 🤖 **AI-Powered Answers**: Get accurate, context-aware responses grounded in your actual documents
@@ -76,12 +76,20 @@ Perfect for researchers, legal professionals, enterprise knowledge bases, custom
 - pip package manager
 - (Optional) CUDA-compatible GPU for faster processing
 
-### Installation (Coming Soon)
+### Installation
+
+#### Install from PyPI (Coming Soon)
+
+```bash
+pip install ragflow
+```
+
+#### Install from Source
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/anshuman-nanda/intelligent-doc-rag.git
-   cd intelligent-doc-rag
+   git clone https://github.com/anshuman-nanda/RAGflow.git
+   cd RAGflow
    ```
 
 2. **Create a virtual environment**
@@ -90,9 +98,9 @@ Perfect for researchers, legal professionals, enterprise knowledge bases, custom
    source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 
-3. **Install dependencies**
+3. **Install in development mode**
    ```bash
-   pip install -r requirements.txt
+   pip install -e .
    ```
 
 4. **Set up environment variables**
@@ -101,12 +109,15 @@ Perfect for researchers, legal professionals, enterprise knowledge bases, custom
    # Edit .env with your configuration
    ```
 
-5. **Run the application**
-   ```bash
-   python -m intelligent_doc_rag
-   # or use the CLI
-   python -m intelligent_doc_rag --help
-   ```
+### Running the Demo Server
+
+Run the example FastAPI server:
+
+```bash
+python examples/server.py
+# or
+uvicorn examples.server:app --reload
+```
 
 ### Watch This Space! 👀
 
@@ -118,10 +129,12 @@ Perfect for researchers, legal professionals, enterprise knowledge bases, custom
 
 > **📋 Preview**: The following examples demonstrate the planned API design.
 
-### Basic Document Query
+### As a Python Library
+
+#### Basic Document Query
 
 ```python
-from intelligent_doc_rag import DocumentRAG
+from ragflow import DocumentRAG
 
 # Initialize the RAG system
 rag = DocumentRAG()
@@ -168,13 +181,13 @@ response = rag.query(
 
 ```bash
 # Index documents
-python -m intelligent_doc_rag index --input ./documents --output ./index
+ragflow index --input ./documents --output ./index
 
 # Interactive query mode
-python -m intelligent_doc_rag query --index ./index
+ragflow query --index ./index
 
 # Batch processing
-python -m intelligent_doc_rag batch --input queries.txt --output results.json
+ragflow batch --input queries.txt --output results.json
 ```
 
 ---
@@ -200,17 +213,22 @@ python -m intelligent_doc_rag batch --input queries.txt --output results.json
 ### Planned Structure
 
 ```
-intelligent-doc-rag/
-├── src/
+RAGflow/
+├── ragflow/                     # Main package directory
+│   ├── __init__.py
 │   ├── document_processor/     # Document parsing and chunking
 │   ├── embeddings/              # Embedding model integration
 │   ├── vector_store/            # Vector database operations
 │   ├── retriever/               # Semantic search and ranking
 │   ├── generator/               # LLM integration for answer generation
 │   └── api/                     # REST API endpoints
+├── examples/                    # Usage examples and demo server
+│   ├── server.py               # FastAPI demo server
+│   └── cli.py                  # CLI examples
 ├── tests/                       # Comprehensive test suite
 ├── docs/                        # Documentation
-├── examples/                    # Usage examples
+├── setup.py                     # Package setup
+├── pyproject.toml              # Modern package config
 └── requirements.txt             # Python dependencies
 ```
 
@@ -228,7 +246,7 @@ intelligent-doc-rag/
 
 ## 🤝 Contributing
 
-We love contributions! Whether it's bug fixes, new features, documentation improvements, or feedback, we appreciate your help in making Intelligent Doc RAG better.
+We love contributions! Whether it's bug fixes, new features, documentation improvements, or feedback, we appreciate your help in making RAGflow better.
 
 ### How to Contribute
 
@@ -276,7 +294,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 - [ ] Integration with popular document management systems
 - [ ] Advanced analytics and insights dashboard
 
-**Want to suggest a feature?** Open an [issue](https://github.com/anshuman-nanda/intelligent-doc-rag/issues) with the `enhancement` label!
+**Want to suggest a feature?** Open an [issue](https://github.com/anshuman-nanda/RAGflow/issues) with the `enhancement` label!
 
 ---
 
@@ -284,13 +302,13 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
 ### Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=anshuman-nanda/intelligent-doc-rag&type=Date)](https://star-history.com/#anshuman-nanda/intelligent-doc-rag&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=anshuman-nanda/RAGflow&type=Date)](https://star-history.com/#anshuman-nanda/RAGflow&Date)
 
 ### Contributors
 
 We appreciate all our contributors! 🙏
 
-[![Contributors](https://contrib.rocks/image?repo=anshuman-nanda/intelligent-doc-rag)](https://github.com/anshuman-nanda/intelligent-doc-rag/graphs/contributors)
+[![Contributors](https://contrib.rocks/image?repo=anshuman-nanda/RAGflow)](https://github.com/anshuman-nanda/RAGflow/graphs/contributors)
 
 ---
 
@@ -310,8 +328,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Connect & Support
 
-- **GitHub Issues**: [Report bugs](https://github.com/anshuman-nanda/intelligent-doc-rag/issues) or request features
-- **Discussions**: [Join the conversation](https://github.com/anshuman-nanda/intelligent-doc-rag/discussions)
+- **GitHub Issues**: [Report bugs](https://github.com/anshuman-nanda/RAGflow/issues) or request features
+- **Discussions**: [Join the conversation](https://github.com/anshuman-nanda/RAGflow/discussions)
 - **Email**: [anshuman.nanda@gmail.com](mailto:anshuman.nanda@gmail.com)
 
 ---
@@ -320,8 +338,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ### ⭐ If you find this project useful, please consider giving it a star!
 
-**Made with ❤️ by the Intelligent Doc RAG community**
+**Made with ❤️ by the RAGflow community**
 
-[⬆ Back to Top](#-intelligent-doc-rag)
+[⬆ Back to Top](#-ragflow)
 
 </div>
