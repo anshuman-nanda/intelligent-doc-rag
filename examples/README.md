@@ -20,24 +20,26 @@ uvicorn examples.server:app --reload
 - Root endpoint: http://localhost:8000/
 - Health check: http://localhost:8000/health
 
-### 2. CLI Example (`cli.py`)
+### 2. CLI Usage
 
-Command-line interface examples for RAGflow operations.
+The main CLI is part of the `ragflow` package. After installing the package, you can use it directly:
 
 **Usage:**
 ```bash
 # Index documents
-python examples/cli.py index --input ./documents --output ./index
+ragflow index --input ./documents --output ./index
 
 # Query documents (interactive)
-python examples/cli.py query --index ./index --interactive
+ragflow query --index ./index --interactive
 
 # Query documents (single question)
-python examples/cli.py query --index ./index --question "What is the main topic?"
+ragflow query --index ./index --question "What is the main topic?"
 
 # Batch processing
-python examples/cli.py batch --index ./index --input queries.txt --output results.json
+ragflow batch --index ./index --input queries.txt --output results.json
 ```
+
+For more CLI usage examples, see the documentation in `ragflow/cli.py`.
 
 ## Adding Your Own Examples
 

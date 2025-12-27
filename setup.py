@@ -56,7 +56,7 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "ragflow=examples.cli:main",
+            "ragflow=ragflow.cli:main",
         ],
     },
     keywords=[

@@ -1,7 +1,7 @@
 """
-Example CLI usage demonstrating RAGflow functionality.
+RAGflow CLI - Command line interface for RAGflow.
 
-This script shows how to use RAGflow from the command line.
+This module provides the CLI functionality for RAGflow.
 """
 
 import argparse
@@ -16,13 +16,13 @@ def main():
         epilog="""
 Examples:
   # Index documents
-  python examples/cli.py index --input ./documents --output ./index
+  ragflow index --input ./documents --output ./index
   
   # Query documents
-  python examples/cli.py query --index ./index --question "What is the main topic?"
+  ragflow query --index ./index --question "What is the main topic?"
   
   # Batch processing
-  python examples/cli.py batch --index ./index --input queries.txt --output results.json
+  ragflow batch --index ./index --input queries.txt --output results.json
         """
     )
     

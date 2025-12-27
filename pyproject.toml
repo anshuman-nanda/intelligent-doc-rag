@@ -87,7 +87,7 @@ Repository = "https://github.com/anshuman-nanda/RAGflow"
 "Bug Reports" = "https://github.com/anshuman-nanda/RAGflow/issues"
 
 [project.scripts]
-ragflow = "examples.cli:main"
+ragflow = "ragflow.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["."]
