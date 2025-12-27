@@ -197,6 +197,8 @@ python -m intelligent_doc_rag batch --input queries.txt --output results.json
 
 ## 🏗️ Architecture
 
+### Planned Structure
+
 ```
 intelligent-doc-rag/
 ├── src/
